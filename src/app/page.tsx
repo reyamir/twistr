@@ -1,11 +1,16 @@
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
+import { PrivateKeyInput } from '@twistr/components/privateKeyInput';
+import { TwitterHandleInput } from '@twistr/components/twitterHandleInput';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-24">
-      <p>Twistr</p>
+    <main className="grid h-screen w-screen grid-cols-4">
+      <div className="col-span-1 border-r border-zinc-100 bg-zinc-50">
+        <div className="flex h-full flex-col gap-8 px-4 py-8 lg:px-6">
+          <PrivateKeyInput />
+          <TwitterHandleInput />
+        </div>
+      </div>
+      <div className="col-span-3"></div>
     </main>
   );
 }
