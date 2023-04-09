@@ -5,6 +5,7 @@ specifiers:
   '@types/react': 18.0.33
   '@types/react-dom': 18.0.11
   autoprefixer: 10.4.14
+  bufferutil: ^4.0.7
   eslint: 8.38.0
   eslint-config-next: 13.3.0
   jotai: ^2.0.3
@@ -18,6 +19,7 @@ specifiers:
   react-dom: 18.2.0
   tailwindcss: 3.3.1
   typescript: 5.0.4
+  utf-8-validate: ^6.0.3
   ws: ^8.13.0
 
 dependencies:
@@ -25,6 +27,7 @@ dependencies:
   '@types/react': 18.0.33
   '@types/react-dom': 18.0.11
   autoprefixer: 10.4.14_postcss@8.4.21
+  bufferutil: 4.0.7
   eslint: 8.38.0
   eslint-config-next: 13.3.0_voubu7prgxjfsfbgx5d4sqnwiy
   jotai: 2.0.3_react@18.2.0
@@ -38,7 +41,8 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   tailwindcss: 3.3.1_postcss@8.4.21
   typescript: 5.0.4
-  ws: 8.13.0
+  utf-8-validate: 6.0.3
+  ws: 8.13.0_2adebc2xdjqbcvbjxkodkhadp4
 
 packages:
 
@@ -566,6 +570,14 @@ packages:
       electron-to-chromium: 1.4.356
       node-releases: 2.0.10
       update-browserslist-db: 1.0.10_browserslist@4.21.5
+    dev: false
+
+  /bufferutil/4.0.7:
+    resolution: {integrity: sha512-kukuqc39WOHtdxtw4UScxF/WVnMFVSQVKhtx3AjZJzhd0RGZZldcrfSEbVsWWe6KNH253574cq5F+wpv0G9pJw==}
+    engines: {node: '>=6.14.2'}
+    requiresBuild: true
+    dependencies:
+      node-gyp-build: 4.6.0
     dev: false
 
   /busboy/1.6.0:
@@ -1621,7 +1633,7 @@ packages:
     peerDependencies:
       ws: '*'
     dependencies:
-      ws: 8.13.0
+      ws: 8.13.0_2adebc2xdjqbcvbjxkodkhadp4
     dev: false
 
   /jiti/1.18.2:
@@ -1822,6 +1834,11 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
+    dev: false
+
+  /node-gyp-build/4.6.0:
+    resolution: {integrity: sha512-NTZVKn9IylLwUzaKjkas1e4u2DLNcV4rdYagA4PWdPwW87Bi7z+BznyKSRwS/761tV/lzCGXplWsiaMjLqP2zQ==}
+    hasBin: true
     dev: false
 
   /node-releases/2.0.10:
@@ -2614,6 +2631,14 @@ packages:
       punycode: 2.3.0
     dev: false
 
+  /utf-8-validate/6.0.3:
+    resolution: {integrity: sha512-uIuGf9TWQ/y+0Lp+KGZCMuJWc3N9BHA+l/UmHd/oUHwJJDeysyTRxNQVkbzsIWfGFbRe3OcgML/i0mvVRPOyDA==}
+    engines: {node: '>=6.14.2'}
+    requiresBuild: true
+    dependencies:
+      node-gyp-build: 4.6.0
+    dev: false
+
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
     dev: false
@@ -2666,7 +2691,7 @@ packages:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
     dev: false
 
-  /ws/8.13.0:
+  /ws/8.13.0_2adebc2xdjqbcvbjxkodkhadp4:
     resolution: {integrity: sha512-x9vcZYTrFPC7aSIbj7sRCYo7L/Xb8Iy+pW0ng0wt2vCJv7M9HOMy0UoN3rr+IFC7hb7vXoqS+P9ktyLLLhO+LA==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
@@ -2677,6 +2702,9 @@ packages:
         optional: true
       utf-8-validate:
         optional: true
+    dependencies:
+      bufferutil: 4.0.7
+      utf-8-validate: 6.0.3
     dev: false
 
   /yallist/4.0.0:
