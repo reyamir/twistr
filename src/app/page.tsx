@@ -1,7 +1,9 @@
+'use client';
 import { PrivateKeyInput } from '@twistr/components/privateKeyInput';
 import { Tweets } from '@twistr/components/tweets';
 import { TwitterHandleInput } from '@twistr/components/twitterHandleInput';
 import Link from 'next/link';
+import { Toaster } from 'react-hot-toast';
 
 export default function Home() {
   return (
@@ -28,6 +30,7 @@ export default function Home() {
       <div className="h=full col-span-3 overflow-y-auto">
         <Tweets />
       </div>
+      <Toaster position="top-center" reverseOrder={false} gutter={8} containerClassName="" containerStyle={{}} />
     </main>
   );
 }

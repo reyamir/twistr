@@ -3,13 +3,23 @@ import { privateKeyAtom } from '@twistr/stores/key';
 import { useAtom } from 'jotai';
 import { useState } from 'react';
 import { NostrProfile } from './nostrProfile';
+import toast from 'react-hot-toast';
+import { getPublicKey } from 'nostr-tools';
 
 export const PrivateKeyInput = () => {
   const [value, setValue] = useState('');
   const [key, setKey]: any = useAtom(privateKeyAtom);
 
   const saveKey = () => {
-    setKey(value);
+    if (value.length > 0) {
+      if (getPublicKey(value)) {
+        setKey(value);
+      } else {
+        toast.error('Private key is invalid');
+      }
+    } else {
+      toast.error("Private key can't be empty");
+    }
   };
 
   const deleteKey = () => {
@@ -33,7 +43,7 @@ export const PrivateKeyInput = () => {
       <div className="flex flex-col">
         <input
           name="privateKey"
-          placeholder="Private key..."
+          placeholder="Private key (only hex string supported)"
           type="password"
           value={value}
           onChange={(e) => setValue(e.target.value)}

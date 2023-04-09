@@ -1,6 +1,7 @@
 'use client';
 import { tweetsAtom } from '@twistr/stores/tweets';
 import { useAtomValue } from 'jotai';
+import { Tweet } from './tweet';
 
 export const Tweets = () => {
   const tweets = useAtomValue(tweetsAtom);
@@ -10,9 +11,7 @@ export const Tweets = () => {
       <div className="h-full w-full p-4 lg:p-6">
         <div className="flex flex-col gap-4">
           {tweets.map((tweet, index) => (
-            <div key={index} className="inline-flex rounded border border-zinc-100 px-4 py-3">
-              <div>{tweet}</div>
-            </div>
+            <Tweet key={index} tweet={tweet} />
           ))}
         </div>
       </div>

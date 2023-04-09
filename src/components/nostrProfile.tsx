@@ -22,7 +22,13 @@ export const NostrProfile = ({ privkey }: { privkey: string }) => {
     <div className="group block flex-shrink-0 rounded-md bg-white p-2 shadow-md ring-1 ring-zinc-200">
       <div className="flex items-center">
         <div className="relative h-10 w-10 rounded-full ring-1 ring-zinc-100">
-          <Image src={profile?.picture} alt={'avatar'} fill={true} className="rounded-full object-cover" priority />
+          <Image
+            src={profile?.picture || 'https://void.cat/d/KmypFh2fBdYCEvyJrPiN89.webp'}
+            alt={'avatar'}
+            fill={true}
+            className="rounded-full object-cover"
+            priority
+          />
         </div>
         <div className="ml-2 flex flex-col gap-1">
           <p className="font-medium leading-none text-zinc-700 group-hover:text-zinc-900">
