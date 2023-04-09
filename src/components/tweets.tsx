@@ -7,7 +7,7 @@ export const Tweets = () => {
 
   if (tweets.length > 0) {
     return (
-      <div className="h-full w-full overflow-y-auto p-4 lg:p-6">
+      <div className="h-full w-full p-4 lg:p-6">
         <div className="flex flex-col gap-4">
           {tweets.map((tweet, index) => (
             <div key={index} className="inline-flex rounded border border-zinc-100 px-4 py-3">

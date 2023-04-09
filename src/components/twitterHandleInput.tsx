@@ -17,7 +17,7 @@ export const TwitterHandleInput = () => {
       while (username.charAt(0) === '@') {
         username = username.substring(1);
       }
-      fetch(`https://twistr-api.fly.dev/user/${username}`)
+      fetch(`https://twistr-api-production.up.railway.app/user/${username}`)
         .then((res) => res.json())
         .then((data) => (setTweetsAtom(data.data), setLoading(false)));
     }
