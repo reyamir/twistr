@@ -1,4 +1,5 @@
 import { PrivateKeyInput } from '@twistr/components/privateKeyInput';
+import { Tweets } from '@twistr/components/tweets';
 import { TwitterHandleInput } from '@twistr/components/twitterHandleInput';
 
 export default function Home() {
@@ -10,7 +11,9 @@ export default function Home() {
           <TwitterHandleInput />
         </div>
       </div>
-      <div className="col-span-3"></div>
+      <div className="col-span-3">
+        <Tweets />
+      </div>
     </main>
   );
 }
